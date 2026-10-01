@@ -47,13 +47,10 @@ caminho_csv = os.path.join(
 print("Lendo o arquivo CSV...")
 
 df = pd.read_csv(caminho_csv)
+df.rename(columns={'room_id/id': 'room_id'}, inplace=True)
 
 print("CSV lido com sucesso!")
 print("Quantidade de registros:", len(df))
-
-print("\nPrimeiros registros:")
-print(df.head())
-
 
 # ==========================================
 # CONEXÃO COM POSTGRESQL
